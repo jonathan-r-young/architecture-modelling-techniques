@@ -47,6 +47,12 @@ System and enterprise boundaries are usually represented. Juduicious use of busi
 full circle - need to consistently explain your intent to AI to get the desired output
 However, if you can use consistent notation, AI should be able to generate predicatable elaborations based on best practices.
 
+
+## Generative AI Prompt Engineering for Architecture Overviews
+
+Provide the narrative for an overview, show examples
+
+
 ## Links:
 
   - [Unified Modelling Language®](https://www.omg.org/spec/UML/2.5.1/)
@@ -54,3 +60,7 @@ However, if you can use consistent notation, AI should be able to generate predi
 ## Trademarks: 
 
   - Unified Modeling Language®, UML® are registered trademarks of the Object Management Group, Inc.
+
+## Disclaimer
+
+The postings on this profile are my own and do not necessarily represent my employer's positions, strategies or opinions.
