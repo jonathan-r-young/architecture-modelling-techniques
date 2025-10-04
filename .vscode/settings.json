@@ -1,0 +1,10 @@
+{
+  "plantuml.jar": "/home/jonathan/.local/bin/plantuml.jar",
+  "plantuml.exportFormat": "svg",
+  "plantuml.jarArgs": [
+    "-DRELATIVE_INCLUDE=."
+  ],
+  "plantuml.render": "Local",
+  "plantuml.exportOutDir": "",
+  "plantuml.java": "/usr/bin/java"
+}
