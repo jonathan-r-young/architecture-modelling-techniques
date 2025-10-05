@@ -1,0 +1,119 @@
+@startuml system01
+
+!include C4/C4_Context.puml
+
+sprite SUN01 images/sun03.svg
+
+sprite EARTH images/earth_50.svg
+sprite MOON images/moon_50.svg
+
+LAYOUT_LEFT_RIGHT()
+
+Title "System Context for the Earth"
+AddElementTag("planet", $sprite="EARTH", $legendText="Earth")
+AddElementTag("star", $sprite="SUN01", $legendText="Sun")
+AddElementTag("satellite", $sprite="MOON", $legendText="Moon")
+
+System_Ext(sun, "Sun", "The central star of the Solar System", $tags="star")
+System(earth, "Earth", "Our home planet", $tags="planet")
+System_Ext(moon, "Moon", "Earth's natural satellite", $tags="satellite")
+
+
+
+Rel(earth, sun, "Orbits")
+Rel(moon, earth, "Orbits")
+
+' Sources:
+' https://freesvg.org/planet-earth-symbol
+' https://freesvg.org/sun-vector-image10956
+' https://freesvg.org/full-moon-1633464966
+' License: CC0 1.0 Universal https://creativecommons.org/publicdomain/zero/1.0/
+
+
+@enduml
+
+@startuml system02
+'!$ICONURL = "./icons"
+
+!include C4/C4_Context.puml
+'!include icons/common.puml
+'!include icons/earth_europe.puml
+sprite SUN01 images/sun03.svg
+sprite EARTH01 images/earth03.svg
+sprite MOON01 images/moon03.svg
+
+sprite MERCURY images/mercury_50.svg
+sprite VENUS images/venus_50.svg
+sprite EARTH images/earth_50.svg
+sprite MARS images/mars_50.svg
+sprite JUPITER images/jupiter_50.svg
+sprite SATURN images/saturn_50.svg
+sprite URANUS images/uranus_50.svg
+sprite NEPTUNE images/neptune_50.svg
+sprite MOON images/moon_50.svg
+
+'LAYOUT_LEFT_RIGHT()
+
+Title "Architecture Overview for The Solar System"
+AddElementTag("planet", $sprite="EARTH01", $legendText="Earth")
+AddElementTag("star", $sprite="SUN01", $legendText="Sun")
+AddElementTag("satellite", $sprite="MOON01", $legendText="Moon")
+
+AddElementTag("mercury", $sprite="MERCURY", $legendText="Mercury")
+AddElementTag("venus", $sprite="VENUS", $legendText="Venus")
+AddElementTag("earth", $sprite="EARTH", $legendText="Earth")
+AddElementTag("mars", $sprite="MARS", $legendText="Mars")
+AddElementTag("jupiter", $sprite="JUPITER", $legendText="Jupiter")
+AddElementTag("saturn", $sprite="SATURN", $legendText="Saturn")
+AddElementTag("uranus", $sprite="URANUS", $legendText="Uranus")
+AddElementTag("neptune", $sprite="NEPTUNE", $legendText="Neptune")
+AddElementTag("moon", $sprite="MOON", $legendText="Moon")
+
+
+
+
+System_Ext(sun, "Sun", "The central star of the Solar System", $tags="star")
+Boundary(b_inner_solar, "Inner Solar System", "Planets closest to the Sun", $tags="inner") {
+  System_Ext(mercury, "Mercury", "Innermost planet", $tags="mercury")
+  System_Ext(venus, "Venus", "Second planet from the Sun", $tags="venus")
+  Boundary(B_goldilocks, "Goldilocks", "Habitable Zone", $tags="habitable+zone") {
+    'System(moon, "Moon", "Earth's natural satellite", $tags="satellite")
+    System(earth, "Earth", "Our home planet", $tags="earth")
+    System_Ext(mars, "Mars", "The red planet", $tags="mars")
+  } 
+}
+Boundary(b_outer_solar, "Outer Solar System", "Gas and Ice Giants", $tags="outer") {
+  System_Ext(jupiter, "Jupiter", "Largest planet", $tags="jupiter")
+  System_Ext(saturn, "Saturn", "Planet with prominent rings", $tags="saturn")
+  System_Ext(uranus, "Uranus", "Ice giant", $tags="uranus")
+  System_Ext(neptune, "Neptune", "Farthest planet", $tags="neptune")
+}
+
+
+
+Rel(mercury, sun, "Orbits")
+Rel(venus, sun, "Orbits")
+Rel(earth, sun, "Orbits")
+'Rel(moon, earth, "Orbits")
+Rel(mars, sun, "Orbits")
+Rel(jupiter, sun, "Orbits")
+Rel(saturn, sun, "Orbits")
+Rel(uranus, sun, "Orbits")
+Rel(neptune, sun, "Orbits")
+
+' Sources:
+' All SVG sources below used under License: CC0 1.0 Universal https://creativecommons.org/publicdomain/zero/1.0/
+
+' Earth https://freesvg.org/planet-earth-symbol
+' Sun https://freesvg.org/sun-vector-image10956
+' Moon https://freesvg.org/full-moon-1633464966
+' Neptune https://freesvg.org/planet-neptune
+' Uranus https://freesvg.org/planet-uranus
+' Saturn https://freesvg.org/saturn-135440
+' Jupiter https://freesvg.org/jupiter-planet
+' Mars https://freesvg.org/cartoon-red-planet
+' Mercury https://freesvg.org/planet-mercury
+' Venus https://freesvg.org/vector-illustration-of-planet-venus-in-color
+' Icons converted to 50x50px SVG and cleaned with Inkscape and rsvg-convert
+
+@enduml

@@ -1,0 +1,45 @@
+@startuml SolarSystemOverviewExample2
+!includeurl C4/C4_Context.puml
+
+Person(ceo, "CEO", "Environmental Energy Group CEO")
+System(sun, "Sun", "Source of solar energy for the Solar System")
+System(mercury, "Mercury", "Closest planet to the Sun")
+System(venus, "Venus", "Second planet from the Sun")
+System(earth, "Earth", "Planet dependent on solar energy to support life")
+System(mars, "Mars", "Fourth planet from the Sun")
+System(jupiter, "Jupiter", "Largest planet in the Solar System")
+System(saturn, "Saturn", "Planet with prominent rings")
+System(uranus, "Uranus", "Ice giant")
+System(neptune, "Neptune", "Farthest planet from the Sun")
+
+' Relationships
+Rel(ceo, earth, "Interested in clean energy solutions for Earth")
+Rel(sun, mercury, "Provides solar energy")
+Rel(sun, venus, "Provides solar energy")
+Rel(sun, earth, "Provides solar energy", "Light & Heat")
+Rel(sun, mars, "Provides solar energy")
+Rel(sun, jupiter, "Provides solar energy")
+Rel(sun, saturn, "Provides solar energy")
+Rel(sun, uranus, "Provides solar energy")
+Rel(sun, neptune, "Provides solar energy")
+
+Rel(earth, sun, "Receives energy to support life", "Photosynthesis, Climate, etc.")
+
+' Highlight dependency
+Boundary(solarEnergy, "Solar Energy Flow") {
+    Rel(sun, earth, "Solar radiation", "Essential for life")
+}
+
+' Add icons/colors for planets
+UpdateElementStyle(sun, $bgColor="yellow", $fontColor="black")
+UpdateElementStyle(mercury, $bgColor="gray", $fontColor="black")
+UpdateElementStyle(venus, $bgColor="gold", $fontColor="black")
+UpdateElementStyle(earth, $bgColor="lightblue", $fontColor="black")
+UpdateElementStyle(mars, $bgColor="red", $fontColor="white")
+UpdateElementStyle(jupiter, $bgColor="orange", $fontColor="black")
+UpdateElementStyle(saturn, $bgColor="khaki", $fontColor="black")
+UpdateElementStyle(uranus, $bgColor="lightcyan", $fontColor="black")
+UpdateElementStyle(neptune, $bgColor="blue", $fontColor="white")
+
+SHOW_LEGEND()
+@enduml

@@ -1,0 +1,30 @@
+@startuml SolarSystemOverviewExample1
+!includeurl C4/C4_Context.puml
+
+' Solar System Context
+Person(ceo, "CEO", "Environmental Energy Group CEO")
+System(sun, "Sun", "Source of solar energy for the Solar System")
+System(earth, "Earth", "Planet dependent on solar energy to support life")
+System_Ext(mars, "Mars", "Neighbor planet")
+System_Ext(jupiter, "Jupiter", "Gas giant")
+
+' Relationships
+Rel(ceo, earth, "Interested in clean energy solutions for Earth")
+Rel(sun, earth, "Provides solar energy", "Light & Heat")
+Rel(earth, sun, "Receives energy to support life", "Photosynthesis, Climate, etc.")
+Rel(earth, mars, "Neighboring planets")
+Rel(earth, jupiter, "Neighboring planets")
+
+' Highlight dependency
+Boundary(solarEnergy, "Solar Energy Flow") {
+    Rel(sun, earth, "Solar radiation", "Essential for life")
+}
+
+' Add icons (C4-PlantUML uses built-in icons)
+UpdateElementStyle(sun, $bgColor="yellow", $fontColor="black")
+UpdateElementStyle(earth, $bgColor="lightblue", $fontColor="black")
+UpdateElementStyle(mars, $bgColor="red", $fontColor="white")
+UpdateElementStyle(jupiter, $bgColor="orange", $fontColor="black")
+
+SHOW_LEGEND()
+@enduml
