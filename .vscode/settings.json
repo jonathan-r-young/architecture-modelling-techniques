@@ -1,6 +1,6 @@
 {
   "plantuml.jar": "/home/jonathan/.local/bin/plantuml.jar",
-  "plantuml.exportFormat": "svg",
+  "plantuml.exportFormat": "png",
   "plantuml.jarArgs": [
     "-DRELATIVE_INCLUDE=."
   ],
